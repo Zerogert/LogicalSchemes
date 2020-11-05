@@ -1,0 +1,20 @@
+﻿<Window x:Class="Logical_cxem.View.EnterLabel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Logical_cxem.View"
+        mc:Ignorable="d"
+        Title="Имя метки" Height="100" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Введите название метки" Padding="5"></TextBlock>
+            <TextBox Name="Label" MinWidth="150"></TextBox>
+        </StackPanel>
+        <Button Click="Button_Click" Grid.Row="1">Ввод</Button>
+    </Grid>
+</Window>

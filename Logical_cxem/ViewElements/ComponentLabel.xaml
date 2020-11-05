@@ -1,0 +1,31 @@
+﻿<logicalCxem:BaseComponentUI x:Class="Logical_cxem.ViewElements.ComponentLabel"
+                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                             xmlns:local="clr-namespace:Logical_cxem.ViewElements"
+                             xmlns:converts="clr-namespace:Logical_cxem.Converts"
+                             xmlns:logicalCxem="clr-namespace:Logical_cxem"
+                             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                             mc:Ignorable="d"
+                             d:DesignHeight="40" d:DesignWidth="60">
+    <logicalCxem:BaseComponentUI.Resources>
+        <converts:ConverterFromBoolToVisibility x:Key="converterFromBoolToVisibility" />
+        <converts:ConverterFromBoolToInvisibility x:Key="converterFromBoolToInvisibility" />
+    </logicalCxem:BaseComponentUI.Resources>
+    <Grid MouseMove="UIElement_OnMouseMove">
+        <Grid VerticalAlignment="Center">
+            <Grid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Click="OnEdited" Header="Изменить подпись"></MenuItem>
+                </ContextMenu>
+            </Grid.ContextMenu>
+            <TextBlock Foreground="#e3e5e2" Name="ShowTextElement"
+                       Text="{Binding Strength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding IsEditing, Mode=TwoWay, Converter={StaticResource converterFromBoolToInvisibility}}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+            
+        </Grid>
+    </Grid>
+</logicalCxem:BaseComponentUI>

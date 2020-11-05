@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Logical_cxem.ViewElements.ElementUICheck"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Logical_cxem.ViewElements"
+             xmlns:logicalCxem="clr-namespace:Logical_cxem"
+             xmlns:converts="clr-namespace:Logical_cxem.Converts"
+             mc:Ignorable="d"
+             d:DesignHeight="20" d:DesignWidth="20">
+    <UserControl.Resources>
+        <logicalCxem:StateConverter x:Key="stateConverter" />
+        <logicalCxem:StateConverterColor x:Key="stateConverterColor" />
+        <converts:ConverterFromBoolToVisibility x:Key="converterFromBoolToVisibility" />
+    </UserControl.Resources>
+    <Grid
+        Visibility="{Binding CheckVisibility, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource converterFromBoolToVisibility}}">
+        <Ellipse Visibility="{Binding CheckElementVisibility}" Width="20" Height="20" Stroke="Black"
+                 Fill="{Binding TrueStateCheck, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource stateConverterColor}}" />
+        <TextBlock Name="State_text"
+                   Text="{Binding StateCheck, Mode=TwoWay, Converter={StaticResource stateConverter}}"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</UserControl>

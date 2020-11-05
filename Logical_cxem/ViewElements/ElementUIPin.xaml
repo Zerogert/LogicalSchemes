@@ -1,0 +1,14 @@
+﻿<logicalCxem:BaseComponentUI x:Class="Logical_cxem.ViewElements.ElementUIPin"
+                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                             xmlns:local="clr-namespace:Logical_cxem.ViewElements"
+                             xmlns:logicalCxem="clr-namespace:Logical_cxem"
+                             mc:Ignorable="d"
+                             d:DesignHeight="13" d:DesignWidth="13">
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="UIElement_OnMouseMove" ZIndex="1000">
+        <Ellipse HorizontalAlignment="Left" VerticalAlignment="Top" Width="13" Height="13" Stroke="Black"
+                 Fill="#7d7f7d" />
+    </Grid>
+</logicalCxem:BaseComponentUI>

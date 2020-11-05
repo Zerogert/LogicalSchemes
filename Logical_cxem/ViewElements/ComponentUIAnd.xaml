@@ -1,0 +1,26 @@
+﻿<local:BaseComponentUI x:Class="Logical_cxem.ComponentUIAnd"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       xmlns:d="http://schemas.microsoft.com/expressi"
+                       xmlns:local="clr-namespace:Logical_cxem"
+                       xmlns:viewElements="clr-namespace:Logical_cxem.ViewElements"
+                       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                       mc:Ignorable="d"
+                       d:DesignHeight="50" d:DesignWidth="50">
+    <Grid MouseMove="UIElement_OnMouseMove" ZIndex="1000">
+        <TextBlock Panel.ZIndex="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#e3e5e2"
+                   Margin="0 -20 0 0" Text="&amp;" />
+        <Rectangle Width="40" Height="40" Stroke="Black" Fill="#7d7f7d" />
+        <viewElements:ElementUIPin Type="TypeOut" HorizontalAlignment="Left" VerticalAlignment="Top" Direction="West"
+                                   DragOnPin="ComponentUI_Drag" DropOnPin="ComponentUI_DropOnPin" id="2"
+                                   Margin="42,15,0,0" />
+        <viewElements:ElementUIPin Type="TypeIn" HorizontalAlignment="Left" VerticalAlignment="Top" Direction="East"
+                                   DragOnPin="ComponentUI_Drag" DropOnPin="ComponentUI_DropOnPin" id="1"
+                                   Margin="5,25,0,0" />
+        <viewElements:ElementUIPin Type="TypeIn" HorizontalAlignment="Left" VerticalAlignment="Top" Direction="East"
+                                   DragOnPin="ComponentUI_Drag" DropOnPin="ComponentUI_DropOnPin" id="0"
+                                   Margin="5, 5,0,0" />
+        <viewElements:ElementUICheck VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 -5 0 0" />
+    </Grid>
+</local:BaseComponentUI>

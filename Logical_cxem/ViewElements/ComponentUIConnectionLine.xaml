@@ -1,0 +1,17 @@
+﻿<local:BaseComponentUI x:Class="Logical_cxem.ViewElements.ComponentUIConnectionLine"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:local="clr-namespace:Logical_cxem"
+                       mc:Ignorable="d"
+                       d:DesignHeight="137.5" d:DesignWidth="129">
+    <local:BaseComponentUI.Resources>
+        <local:StateConverterColor x:Key="stateConverterColor" />
+    </local:BaseComponentUI.Resources>
+    <Grid AllowDrop="False" ZIndex="-1000">
+        <Polyline AllowDrop="False" Points="{Binding Points}"
+                  Stroke="{Binding State, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource stateConverterColor}}"
+                  StrokeThickness="2" />
+    </Grid>
+</local:BaseComponentUI>
